@@ -8,10 +8,14 @@
 
   <!-- Tailwind (Play CDN — prototype only) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Fonts: Barlow Condensed (display) + Barlow (body) -->
+  <!-- Fonts: Proxima Nova (titles) + Open Sans (body).
+       Open Sans loads from Google Fonts below. Proxima Nova is a licensed Adobe font (not on Google Fonts):
+       paste your Adobe Fonts / Typekit kit <link> here to load it for everyone — otherwise it uses a locally
+       installed "Proxima Nova" if present, then falls back to a close geometric sans. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="https://use.typekit.net/XXXXXXX.css"> -->
 
   <script>
     tailwind.config = {
@@ -26,8 +30,8 @@
             charcoal: '#1F1F1F',
           },
           fontFamily: {
-            display: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
-            body: ['Barlow', 'system-ui', 'sans-serif'],
+            display: ['"Proxima Nova"', '"proxima-nova"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+            body: ['"Open Sans"', 'system-ui', 'sans-serif'],
           },
           boxShadow: {
             card: '0 1px 2px rgba(15,23,42,.06), 0 8px 24px -12px rgba(15,23,42,.12)',
@@ -40,8 +44,8 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { font-family: 'Barlow', system-ui, sans-serif; }
-    h1,h2,h3,.font-display { font-family: 'Barlow Condensed', system-ui, sans-serif; }
+    body { font-family: 'Open Sans', system-ui, sans-serif; }
+    h1,h2,h3,.font-display { font-family: 'Proxima Nova', 'proxima-nova', 'Helvetica Neue', Arial, sans-serif; }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
     /* hide scrollbar on chip row */
     .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -76,8 +80,10 @@
           <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest ring-1 ring-white/20 backdrop-blur">
             <span class="h-1.5 w-1.5 rounded-full bg-brand-lime"></span> Runfest with Jakob
           </div>
-          <h1 class="mt-3 font-display text-5xl sm:text-6xl font-800 leading-[0.95] tracking-tight uppercase">
-            RunFest <span class="text-brand-lime">Norway</span>
+          <h1 class="mt-3">
+            <img src="runfest%20logo.png" alt="RunFest Norway"
+                 class="h-12 sm:h-16 w-auto select-none drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
+                 style="filter: brightness(0) invert(1);" />
           </h1>
           <p class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-white/90 text-lg">
             <span class="inline-flex items-center gap-1.5">
